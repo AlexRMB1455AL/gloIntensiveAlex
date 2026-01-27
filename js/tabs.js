@@ -1,1 +1,1 @@
-console.log('tabs');
+console.log(document.getElementById());
