@@ -14,7 +14,9 @@
 // })
 
 const tabButtons = document.querySelectorAll(".design-list__item");
+const tabDescription = document.querySelectorAll('.design-descr');
 // console.log(tabButtons);
+console.log(tabDescription);
 
 tabButtons.forEach((tabButton, index) => {
   //   tabButton.onclick = function () {
@@ -22,8 +24,29 @@ tabButtons.forEach((tabButton, index) => {
   //     console.dir(tabButton);
   //   };
   tabButton.addEventListener("click", (event) => {
-    console.log(event.target);
-    //console.dir(tabButton);
+    tabDescription.forEach((descr, indexDescr) => {
+       if(index === indexDescr) {
+        
+            descr.classList.remove('hidden')
+        } else {
+            descr.classList.add('hidden')
+        }
+       
+    })
+    // console.log(event.target);
+    // console.dir(tabButton);
+    // event.target.classList.add('active');
+    tabButtons.forEach((btn) => {
+        // console.dir(tabButton);
+        // console.log(btn);
+        // console.log(event.target);
+        if(btn === event.target){
+            btn.classList.add('design-list_item.active')
+        } else {
+            btn.classList.remove('design-list_item.active')
+
+        }
+    })
   });
   // tabButton.addEventListener('click', () => {
   //     console.log('click2');
